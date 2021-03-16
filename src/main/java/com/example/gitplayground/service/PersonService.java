@@ -18,7 +18,8 @@ public class PersonService {
 
 
     public Person createPerson(String name){
-        Person person = new Person(personIdCounter.getAndIncrement(), name)
+        Person person = new Person(personIdCounter.getAndIncrement(), name);
+        return personRepository.save(person);
     }
 
     public Person findById(int id){
